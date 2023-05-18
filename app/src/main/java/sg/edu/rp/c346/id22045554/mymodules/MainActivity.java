@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
+
+import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tvC203;
     TextView tvC218;
     TextView tvC235;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,16 +31,25 @@ public class MainActivity extends AppCompatActivity {
         tvC218 = findViewById(R.id.C218);
         tvC235 = findViewById(R.id.C235);
 
+        Module[] modArr = new Module[5];
+        modArr[0] = new Module("C346","Android Programming",2023,1,4,"E65A");
+        modArr[1] = new Module("C206","Software Development Process",2023,1,4,"W65D");
+        modArr[2] = new Module("C218","UI/UX Design",2023,1,4,"W65D");
+        modArr[3] = new Module("C203","Web Development in Php",2023,1,4,"W65D");
+        modArr[4] = new Module("C235","IT Security and Management",2023,1,4,"W65D");
+
+
+
+
         tvC346.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ModuleDetailActivity.class);
-                intent.putExtra("code", "C346");
-                intent.putExtra("name", "Android Programming");
-                intent.putExtra("year", 2023);
-                intent.putExtra("sem", 1);
-                intent.putExtra("cred", 4);
-                intent.putExtra("ven", "E65A");
+
+
+                intent.putExtra("mod",modArr[0]);
+
+
 
                 startActivity(intent);
 
@@ -48,12 +62,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, ModuleDetailActivity.class);
-                intent.putExtra("code", "C206");
-                intent.putExtra("name", "Software Development Process");
-                intent.putExtra("year", 2023);
-                intent.putExtra("sem", 1);
-                intent.putExtra("cred", 4);
-                intent.putExtra("ven", "W65D");
+                intent.putExtra("mod",modArr[1]);
                 startActivity(intent);
 
             }
@@ -64,12 +73,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, ModuleDetailActivity.class);
-                intent.putExtra("code", "C218");
-                intent.putExtra("name", "UI/UX Design");
-                intent.putExtra("year", 2023);
-                intent.putExtra("sem", 1);
-                intent.putExtra("cred", 4);
-                intent.putExtra("ven", "W65D");
+                intent.putExtra("mod",modArr[2]);
                 startActivity(intent);
 
             }
@@ -80,12 +84,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, ModuleDetailActivity.class);
-                intent.putExtra("code", "C203");
-                intent.putExtra("name", "Web Development in Php");
-                intent.putExtra("year", 2023);
-                intent.putExtra("sem", 1);
-                intent.putExtra("cred", 4);
-                intent.putExtra("ven", "W65D");
+                intent.putExtra("mod",modArr[3]);
                 startActivity(intent);
 
             }
@@ -96,12 +95,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent(MainActivity.this, ModuleDetailActivity.class);
-                intent.putExtra("code", "C235");
-                intent.putExtra("name", "IT Security and Management");
-                intent.putExtra("year", 2023);
-                intent.putExtra("sem", 1);
-                intent.putExtra("cred", 4);
-                intent.putExtra("ven", "W65D");
+                intent.putExtra("mod",modArr[4]);
                 startActivity(intent);
 
             }

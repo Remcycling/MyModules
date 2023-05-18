@@ -17,16 +17,14 @@ public class ModuleDetailActivity extends AppCompatActivity {
         tvAnswer = findViewById(R.id.textView);
 
         Intent intentReceived = getIntent();
-        String code = intentReceived.getStringExtra("code");
-        String name = intentReceived.getStringExtra("name");
-        String ven = intentReceived.getStringExtra("ven");
-        int year = intentReceived.getIntExtra("year", 0);
-        int sem = intentReceived.getIntExtra("sem", 0);
-        int cred = intentReceived.getIntExtra("cred", 0);
+         Module module = (Module) intentReceived.getSerializableExtra("mod");
 
 
-        tvAnswer.setText("Module code: "+ code + "\nModule name: " + name + "\nYear: "+ year +
-                "\nSemester:" + sem + "\nCredit: "+ cred + "\nVenue: " + ven);
+
+
+
+        tvAnswer.setText("Module code: "+ module.code + "\nModule name: " + module.name + "\nYear: "+
+                module.year + "\nSemester: "+ module.sem + "\nCredit: "+ module.cred + "\nVenue: "+ module.ven);
 
 
 
