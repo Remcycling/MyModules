@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Modules</string>
+    <string name="c346_name">C346 Android Programming</string>
+    <string name="c206_name">C206 Software Development Process</string>
+    <string name="c218_name">C218 UI/UX Design</string>
+    <string name="c203_name">C203 Web Development</string>
+    <string name="c235_name">C235 IT Security and Management</string>
 </resources>
